@@ -23,7 +23,7 @@ Rails.application.configure do
     port: 587,
     authentication: :plain,
     user_name: "andress.android",
-    password: "fijisurf",
+    password: "",
   }
 
   # Print deprecation notices to the Rails logger.
