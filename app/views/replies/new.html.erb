@@ -1,0 +1,21 @@
+<%= form_for([@article, @article.replies.new], remote: true) do |f| %>
+
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+	</div>
+
+	<div class="field">
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit 'Add Reply' %>
+	</div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= div_for article do %>
+<h2>
+	<%= link_to article.title, article %>
+	<% if article.owned_by? current_user %>
+		<%= link_to 'Edit', edit_article_path(article) %> 
+		<%= link_to 'Remove', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+</h2>
+
+<p id='ingredients'>
+	<% article.ingredients.each do |ingredient| %>
+	<%= link_to ingredient.name %><% if article.owned_by? current_user %><%= link_to 'x', edit_article_ingredient_path(article, ingredient) %><% end %>
+	<% end %>
+</p>
+
+<p>
+  <%= simple_format article.body %>
+</p>
+
+<p>
+  <em>Published at:</em>
+  <%= article.published_at %> <em>Replies:</em>
+  <%= article.replies.count %>
+  <em>Author:</em> 	<%= article.user.name %>
+</p>
+
+<% end %>

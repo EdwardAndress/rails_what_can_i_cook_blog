@@ -1,0 +1,19 @@
+<%= form_for([@user, @user.build_profile]) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :biography %><br>
+    <%= f.text_area :bio %>
+  </div>
+  <div class="field">
+    <%= f.label :background_colour %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="actions">
+      <%= f.submit @confirm_button %>
+      <%= submit_tag 'Skip' %>
+  </div>
+<% end %>

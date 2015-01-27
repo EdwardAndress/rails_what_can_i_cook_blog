@@ -1,0 +1,14 @@
+<%= div_for reply do %>
+	<h3>
+		<%= reply.name %> &lt;<em><%= reply.email %></em> &gt; said:
+	</h3>
+
+	<%= reply.body %>
+	
+		<span class='actions'>
+			<% if @article.owned_by?(current_user) %>
+			<%= link_to 'Remove', [@article, reply], confirm: 'Are you sure?  This cannot be undone.', method: :delete, remote: true %>
+			<% end %>
+		</span>
+
+	<% end %>

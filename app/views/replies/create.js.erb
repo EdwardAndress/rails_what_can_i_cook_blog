@@ -1,0 +1,4 @@
+$("<%= escape_javascript(render(@reply)) %>").clone().hide().prependTo('#replies').slideDown("slow");
+$('#new_reply')[0].reset();
+$('#new_reply').hide();
+$('#new_reply_link').show();

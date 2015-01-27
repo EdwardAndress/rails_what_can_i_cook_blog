@@ -1,0 +1,11 @@
+<%= render @article %>
+
+<h3><%= link_to 'Back', articles_path %></h3>
+
+<h3>Replies</h3>
+
+<div id='replies'>
+	<%= render @article.replies %>
+</div>
+
+<%= link_to "New Reply", new_article_reply_path(@article, :format => :js), :remote => true, :id => 'new_reply_link' %> | <%= link_to 'Email a friend', '#', onclick: "$('#notify_friend_form').slideDown()" %> <%= render 'notify_friend' %>
